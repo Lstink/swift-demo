@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ChatMessageView: View {
-    let conversation: Conversation
+    @ObservedObject var conversation: Conversation
     var body: some View {
-        List {
+        List(conversation.message, id: \.self) { message in
             HStack {
                 Image(systemName: conversation.avater)
-                Text("您好啊")
+                Text(message)
+                    .listRowSeparator(.hidden)
             }
         }
     }

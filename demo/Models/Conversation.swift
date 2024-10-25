@@ -6,12 +6,14 @@
 //
 import Foundation
 
-class Conversation: Identifiable {
+class Conversation: Identifiable, ObservableObject {
     var id: Int
     var avater: String
     var title: String
     
-    init(id: Int, avater: String, title: String) {
+    @Published var message = [String]()
+    
+    init(id: Int, avater: String, title: String, message: String) {
         self.id = id
         self.avater = avater
         self.title = title

@@ -15,6 +15,16 @@ struct MessageInputView: View {
     var body: some View {
         TextEditor(text: $content)
             .frame(height: 60)
+            .onChange(of: content) { oldValue, newValue in
+                if newValue.last == "\n" {
+                    sendMessage()
+                }
+            }
+    }
+    
+    func sendMessage() {
+        conversation.message.append(content)
+        content = ""
     }
 }
 

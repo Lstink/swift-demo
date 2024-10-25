@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct ConversationHeaderView: View {
+struct HeaderView: View {
+    let conversation: Conversation
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(conversation.title)
+            Spacer()
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 3)
     }
 }
 
-#Preview {
-    ConversationHeaderView()
-}

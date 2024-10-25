@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationSplitView {
+            SidebarView()
+        } detail: {
+            Text("欢迎查看主界面")
+        }
     }
 }
 

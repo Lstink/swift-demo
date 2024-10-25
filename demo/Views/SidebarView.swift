@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @EnvironmentObject var store: Store
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(store.converstations) { Conversation in
+            NavigationLink(destination: ConversationView(conversation: Conversation)) {
+                HStack {
+                    Image(systemName: Conversation.avater)
+                    Text(Conversation.title)
+                }
+            }
+            
+        }
     }
 }
 
-#Preview {
-    SidebarView()
-}

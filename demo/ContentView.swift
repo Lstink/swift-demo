@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var store : Store
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if store.loggedin {
+            MainView()
+        } else {
+            LoginView()
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(Store())
 }

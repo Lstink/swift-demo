@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ConversationView: View {
+    let conversation: Conversation
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+//            HeaderView(conversation: conversation)
+            ChatMessageView(conversation: conversation)
+            MessageInputView(conversation: conversation)
+        }
+        .navigationTitle(conversation.title)
     }
 }
 
-#Preview {
-    ConversationView()
-}

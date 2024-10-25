@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MessageInputView: View {
+    let conversation: Conversation
+    
+    @State private var content = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextEditor(text: $content)
+            .frame(height: 60)
     }
 }
 
-#Preview {
-    MessageInputView()
-}

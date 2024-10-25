@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ChatMessageView: View {
+    let conversation: Conversation
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            HStack {
+                Image(systemName: conversation.avater)
+                Text("您好啊")
+            }
+        }
     }
 }
 
-#Preview {
-    ChatMessageView()
-}
